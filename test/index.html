@@ -14,19 +14,31 @@
 
         <!-- Add your site or application content here -->
         <div>
-          <input id="test-input">
-          <div id="test-hide">
+          <input class="test-input">
+          <div class="test-hide">
             点击不隐藏。
+          </div>
+          <div class="test-input">
+            <input >
+            <div class="test-hide">
+              点击隐藏。
+            </div>
+          </div>
+          <div class="test-input">
+            <input >
+            <div class="test-hide">
+              点击隐藏。
+            </div>
           </div>
         </div>
 
         <script src="../bower_components/jquery/jquery.js"></script>
         <script src="../dest/clk-hide.js"></script>
         <script>
-          $("#test-input").click(function(){
-            $("#test-hide").show()
+          window.registerClkHide(".test-input", ".test-hide");
+          $(".test-input").click(function(){
+            $(".test-hide").show()
           });
-          window.registerClkHide("#test-input", "#test-hide");
         </script>
     </body>
 </html>

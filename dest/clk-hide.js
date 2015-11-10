@@ -8,20 +8,30 @@ regEles = require('./register-clk-hide.coffee');
 (function() {
   var $;
   if ((typeof window) === 'undefined') {
-    return console.log("only run in browser.");
+    return console.error("only run in browser.");
   }
   if ((typeof jQuery) === 'undefined') {
-    return console.log("require jQuery.");
+    return console.error("require jQuery.");
   }
   $ = jQuery;
   return $(document).click(function(e) {
     return $.each(regEles(), function(originSelector, arg) {
       var base, hideSelector, name, options;
       hideSelector = arg[0], options = arg[1];
-      if (isCursorIn(originSelector) || isCursorIn(hideSelector)) {
-        return;
+      if (options.findAsChild) {
+        return $(originSelector).each(function(index) {
+          var base, name;
+          if (isCursorIn(this) || isCursorIn(hideSelector)) {
+            return;
+          }
+          return typeof (base = $(hideSelector, this))[name = options.handle] === "function" ? base[name]() : void 0;
+        });
+      } else {
+        if (isCursorIn(originSelector) || isCursorIn(hideSelector)) {
+          return;
+        }
+        return typeof (base = $(hideSelector))[name = options.handle] === "function" ? base[name]() : void 0;
       }
-      return typeof (base = $(hideSelector))[name = options.handle] === "function" ? base[name]() : void 0;
     });
   });
 })();
@@ -51,7 +61,8 @@ module.exports = (function() {
 var optionsDefault, regEles;
 
 optionsDefault = {
-  handle: "hide"
+  handle: "hide",
+  findAsChild: true
 };
 
 regEles = {};

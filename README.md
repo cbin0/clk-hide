@@ -19,7 +19,13 @@ grunt
   * 参数3是配置
   */
   window.registerClkHide("#test-input", "#test-hide", {
-    handle: "hide"
+    handle: "hide",
+    /*
+    * 是否在原元素的子元素中找可以关闭的元素
+    * 当原元素为class，点击第二个原元素时要关闭的元素会不关闭。这个配置为yes可以避免这种情况
+    * 这样就要保证每个要关闭的元素都是一个原元素的子元素
+    */
+    findAsChild: yes
   });
 </script>
 ```
