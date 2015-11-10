@@ -1,0 +1,16 @@
+{
+  "name": "clk-hide",
+  "version": "1.0.0",
+  "description": "点击页面的其他位置关闭指定的元素",
+  "author": "cuibin",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "coffeeify": "^1.1.0",
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "remapify": "^2.0.3"
+  }
+}

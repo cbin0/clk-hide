@@ -1,0 +1,21 @@
+{
+  "name": "clk-hide",
+  "description": "点击页面的其他位置关闭指定的元素",
+  "main": "",
+  "authors": [
+    "cuibin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cbin0/clk-hide",
+  "moduleType": [],
+  "dependencies": {
+    "jquery": "1.9.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
