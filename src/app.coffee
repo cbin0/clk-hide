@@ -2,8 +2,8 @@ isCursorIn = require './is-cursor-in.coffee'
 regEles    = require './register-clk-hide.coffee'
 
 do ->
-  return console.error "only run in browser." if (typeof window) is 'undefined'
-  return console.error "require jQuery." if (typeof jQuery) is 'undefined'
+  return console.error "clk-hide only run in browser." if (typeof window) is 'undefined'
+  return console.error "clk-hide require jQuery." if (typeof jQuery) is 'undefined'
   $ = jQuery
 
   # 全局事件绑定：click

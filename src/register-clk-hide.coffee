@@ -13,6 +13,6 @@ regEles = {}
 
 # 注册函数，把一个原元素、可以关闭的元素和配置注册到一起
 window.registerClkHide = (originSelector, hideSelector, options) ->
-  regEles[originSelector] = [hideSelector, $.extend(optionsDefault, options)]
+  regEles[originSelector] = [hideSelector, $.extend({}, optionsDefault, options)]
 
 module.exports = () -> regEles

@@ -8,10 +8,10 @@ regEles = require('./register-clk-hide.coffee');
 (function() {
   var $;
   if ((typeof window) === 'undefined') {
-    return console.error("only run in browser.");
+    return console.error("clk-hide only run in browser.");
   }
   if ((typeof jQuery) === 'undefined') {
-    return console.error("require jQuery.");
+    return console.error("clk-hide require jQuery.");
   }
   $ = jQuery;
   return $(document).click(function(e) {
@@ -68,7 +68,7 @@ optionsDefault = {
 regEles = {};
 
 window.registerClkHide = function(originSelector, hideSelector, options) {
-  return regEles[originSelector] = [hideSelector, $.extend(optionsDefault, options)];
+  return regEles[originSelector] = [hideSelector, $.extend({}, optionsDefault, options)];
 };
 
 module.exports = function() {
